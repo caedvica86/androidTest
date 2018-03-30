@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String message1 = "Activity 1";
+        intent.putExtra(EXTRA_MESSAGE, message1);
+        //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
@@ -38,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String message1 = "Activity 1";
+        intent.putExtra(EXTRA_MESSAGE, message1);
         startActivity(intent);
     }
     @Override
@@ -46,13 +49,5 @@ public class MainActivity extends AppCompatActivity {
         // nothing to do here
         // … really
     }
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if(!hasFocus) {
-            // Close every kind of system dialog
-            Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            sendBroadcast(closeDialog);
-        }
-    }
+
 }
